@@ -10,8 +10,6 @@ public class PlaywrightConcepts {
 
         Playwright playwright = Playwright.create(); //one Time
 
-
-
         //Browser browser =  playwright.chromium().launch();
         //headless mode is by default true, to run in headed mode we need to set headless to false
         Browser driver =  playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
@@ -22,6 +20,7 @@ public class PlaywrightConcepts {
 
 
         Page page1 = context1.newPage();
+
         page1.navigate("https://www.google.com");
         Locator searchBox= page1.locator("[aria-label='Search']");
         searchBox.fill("Playwright");
