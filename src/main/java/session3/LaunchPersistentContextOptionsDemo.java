@@ -5,7 +5,7 @@ import com.microsoft.playwright.*;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-public class LaunchPersistentContextOptionsConcept {
+public class LaunchPersistentContextOptionsDemo {
     public static void main(String[] args) {
 
 
@@ -19,10 +19,10 @@ public class LaunchPersistentContextOptionsConcept {
                                             .setArgs(Arrays.asList("--start-maximized", "--disable-notifications"))
                                             .setTimeout(30000));
 
+        Page page =  context.pages().get(0);
 
-        Page page =  context.newPage();
         page.navigate("https://www.yatra.com");
-
+        page.locator("//span[text()='Log In']").click();
 
     }
 

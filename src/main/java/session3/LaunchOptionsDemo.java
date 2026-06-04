@@ -4,7 +4,7 @@ import com.microsoft.playwright.*;
 
 import java.util.Arrays;
 
-public class LaunchOptionsConcept {
+public class LaunchOptionsDemo {
         /*
         * 1. headless: true/false
         * 2. slowMo: number (ms)
@@ -28,7 +28,7 @@ public class LaunchOptionsConcept {
 
         options.setChannel("chrome");
         //options.setExecutablePath("/path/to/chrome");
-        options.setArgs(Arrays.asList("--start-maximized", "--disable-notifications"));
+        options.setArgs(Arrays.asList( "--start-maximized","--disable-notifications"));
 
         options.setTimeout(30000);
 
@@ -36,7 +36,10 @@ public class LaunchOptionsConcept {
 
         //options.setFirefoxUserPrefs(Map.of("browser.startup.homepage", "https://www.google.com"));
         Browser browser = playwright.chromium().launch(options);
-        BrowserContext context = browser.newContext();
+
+
+
+        BrowserContext context = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         Page page =  context.newPage();
         page.navigate("https://www.yatra.com");
 
