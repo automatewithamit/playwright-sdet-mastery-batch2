@@ -32,7 +32,7 @@ public class LocatorsDemo {
 
         Locator loginButton = page.locator("//div[text()='Login / Signup']");
 
-
+        loginButton.nth(0).click();
 
 
         // WebElement loginButton = driver.findElement(By.XPath("//div[text()='Login / Signup']"));
