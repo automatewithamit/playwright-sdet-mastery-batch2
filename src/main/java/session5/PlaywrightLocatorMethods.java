@@ -19,7 +19,7 @@ public class PlaywrightLocatorMethods {
         page.navigate("https://www.yatra.com");
         //GetByRole
         Locator loginButton = page.locator("//div[text()='Login / Signup']");
-        Locator searchButton = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search"));
+        Locator searchButton = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search").setExact(true));
         Locator editButton = page.getByRole(AriaRole.ROW)
                                    .getByText("bala kumar")
                                    .getByRole(AriaRole.BUTTON,new Locator.GetByRoleOptions().setName("Edit"));
@@ -34,9 +34,6 @@ public class PlaywrightLocatorMethods {
         //GetByAltText
 
         //GetByTestId
-
-
-
 
         //GetByTitle
 
