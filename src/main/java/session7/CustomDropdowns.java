@@ -22,9 +22,9 @@ public class CustomDropdowns {
         Page page = context.newPage();
         page.navigate("https://www.yatra.com/");
 
-        selectOptionFromCustomDropdown(page, "Departure From", "BOM");
-        selectOptionFromCustomDropdown(page, "Going To", "MAA");
-        selectTravellers(page, 3, 5, 4);
+        selectOptionFromCustomDropdown(page, "Departure From", "Chennai");
+        selectOptionFromCustomDropdown(page, "Going To", "Goa");
+       // selectTravellers(page, 3, 5, 4);
         // 1. Locate and click the dropdown container to open it
         //Locator dropdown = page.getByRole(AriaRole.COMBOBOX, new Page.GetByRoleOptions().setName("Departure From New Delhi inputbox"));
         //Locator dropdown = page.getByText("Departure From");
@@ -44,7 +44,7 @@ public class CustomDropdowns {
 
     }
 
-    public static void selectOptionFromCustomDropdown(Page page, String dropdownName, String optionToSelect) {
+    public static void selectOptionFromCustomDropdown(Page page, String dropdownName,String optionToSelect) {
         //1. Click on the dropdown to open the options
         //2. Click on the desired option
 
@@ -54,7 +54,9 @@ public class CustomDropdowns {
 
         // 2. Locate and click your specific option from the listbox
 //        Locator option = page.getByRole(AriaRole.LISTITEM, new Page.GetByRoleOptions().setName(optionToSelect).setExact(true));
-        Locator option = page.locator(".MuiStack-root").filter(new Locator.FilterOptions().setHasText(optionToSelect)).getByText(optionToSelect);
+        Locator option = page.locator(".MuiStack-root")
+                             .filter(new Locator.FilterOptions().setHasText(optionToSelect))
+                             .getByTitle(optionToSelect);
         option.click();
     }
 
