@@ -31,6 +31,8 @@ public class MouseActions {
 
 
         }
+
+
     public static void performMouseMove(Page page){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int) screenSize.getWidth();
