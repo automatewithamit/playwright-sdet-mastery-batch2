@@ -2,7 +2,7 @@ package session10;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
 
-public class IFrameInsideIFrameDemo  {
+public class IFrameInsideIFrameDemo {
     static Page page =null;
 
 
